@@ -13,6 +13,7 @@ import Certificates from './pages/Certificates';
 import Squares from './components/Squares';
 import CustomCursor from './components/CustomCursor';
 
+
 const MainContent = () => {
   return (
     <Routes>

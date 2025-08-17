@@ -4,10 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Import the BrowserRouter
+import { BrowserRouter } from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/*
+      This is the CRITICAL part for routing on GitHub Pages.
+      The `basename` tells the router that your app lives in a subdirectory.
+    */}
+    <BrowserRouter basename="/portfolio-website">
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
