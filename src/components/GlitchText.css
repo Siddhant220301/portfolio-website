@@ -1,0 +1,53 @@
+/* src/components/GlitchText.css */
+.glitch-text {
+  position: relative;
+  font-size: 3rem;
+  color: #fff;
+  border-bottom: 2px solid var(--sky-blue);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--accent-pink);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--accent-cyan), 2px 2px var(--accent-pink);
+  clip: rect(85px, 450px, 90px, 0);
+  animation: glitch-anim2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(42px, 9999px, 44px, 0); transform: skew(0.3deg); }
+  5% { clip: rect(17px, 9999px, 96px, 0); }
+  /* ... (more steps for a complex glitch) ... */
+  100% { clip: rect(92px, 9999px, 98px, 0); transform: skew(0.2deg); }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip: rect(78px, 9999px, 82px, 0); transform: skew(0.5deg); }
+  /* ... (more steps) ... */
+  100% { clip: rect(40px, 9999px, 45px, 0); transform: skew(0.1deg); }
+}
+
+@keyframes glitch-skew {
+  0% { transform: skewX(0); }
+  100% { transform: skewX(2deg); }
+}

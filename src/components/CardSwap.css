@@ -1,0 +1,38 @@
+/* src/components/CardSwap.css */
+.card-swap-container {
+  position: relative;
+  perspective: 1200px;
+  overflow: visible;
+  transform: translate(15%, 5%);
+}
+
+.card {
+  position: absolute;
+  top: 65%;
+  left: 30%;
+  border-radius: 12px;
+  /* Restored glassy effect */
+  border: 1px solid rgba(107, 114, 128, 0.3);
+  background: linear-gradient(145deg, rgba(31, 41, 55, 0.5), rgba(17, 24, 39, 0.5));
+  backdrop-filter: blur(12px);
+  color: #E5E7EB;
+  padding: 1.5rem;
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #fff;
+}
+.card p {
+  font-size: 1rem;
+  margin: 0;
+  color: #9CA3AF;
+}

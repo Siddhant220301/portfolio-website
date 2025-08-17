@@ -1,0 +1,60 @@
+/* src/components/Navbar.css */
+.circular-navbar {
+  position: fixed; /* Fix it to the viewport */
+  top: 50%; /* Center vertically */
+  right: 2rem; /* Position on the right */
+  transform: translateY(-50%); /* Adjust for perfect vertical centering */
+  z-index: 100;
+}
+
+.circular-navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Stack icons vertically */
+  gap: 1rem; /* Space between icons */
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Make it circular */
+  background-color: rgba(31, 41, 55, 0.5); /* Semi-transparent dark gray */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(107, 114, 128, 0.2);
+  color: #E5E7EB; /* Icon color */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  background-color: #38BDF8; /* Sky-blue for hover/active */
+  color: #111827; /* Darker icon color on hover */
+  transform: scale(1.1);
+  border-color: #38BDF8;
+}
+
+.tooltip-text {
+  position: absolute;
+  right: 120%; /* Position tooltip to the left of the icon */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #E5E7EB;
+  color: #111827;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-link:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}

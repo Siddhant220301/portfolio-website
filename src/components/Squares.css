@@ -1,0 +1,9 @@
+.squares-canvas {
+  position: fixed; /* Use fixed positioning to lock it to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Send it to the absolute background */
+  pointer-events: none; /* Make sure it's not clickable */
+}

@@ -1,0 +1,67 @@
+/* src/pages/Experience.css */
+.experience-layout {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
+.details-column {
+  flex: 0 0 45%;
+  color: #E5E7EB;
+  height: 60vh; /* Set a fixed height */
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-title {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  display: block;
+}
+
+.experience-item .company {
+  font-size: 1.1rem;
+  color: #9CA3AF;
+  margin-bottom: 0.5rem;
+}
+
+.experience-item .date {
+  font-size: 1rem;
+  color: #38BDF8;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.experience-item ul {
+  list-style: none;
+  padding-left: 0;
+  overflow-y: auto; /* This makes the list scrollable */
+  padding-right: 1rem; /* Add space for the scrollbar */
+}
+
+.experience-item li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #9CA3AF;
+}
+
+.experience-item li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #38BDF8;
+}
+
+.cards-column {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  position: relative;
+}

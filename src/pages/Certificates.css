@@ -1,0 +1,48 @@
+/* src/pages/Certificates.css */
+.certificates-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.certificates-intro {
+  font-size: 1.1rem;
+  color: var(--light-gray-text);
+  max-width: 600px;
+  text-align: center;
+  margin: -1rem 0 3rem 0;
+}
+
+.certificates-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.certificate-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--medium-gray);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(107, 114, 128, 0.2);
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.cert-icon {
+  color: var(--sky-blue);
+  font-size: 2rem;
+  flex-shrink: 0;
+}

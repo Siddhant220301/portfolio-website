@@ -1,0 +1,48 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+:root {
+  --dark-gray: #111827;
+  --medium-gray: #1F2J7;
+  --light-gray-text: #9CA3AF;
+  --primary-text: #E5E7EB;
+  --sky-blue: #38BDF8;
+  --sky-blue-dark: #0EA5E9;
+  --sky-blue-rgb: 56, 189, 248;
+  --accent-pink: #ff00c1;
+  --accent-cyan: #00fff9;
+}
+
+html {
+  background-color: var(--dark-gray);
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+  cursor: none;
+}
+
+#root {
+  background-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--primary-text);
+}
+
+/* --- ADD THIS RULE --- */
+/* This hides the default hand cursor on interactive elements */
+a, button {
+  cursor: none;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--medium-gray); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--sky-blue); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--sky-blue-dark); }
