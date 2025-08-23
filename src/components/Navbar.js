@@ -2,9 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { 
-  FiHome, FiUser, FiBriefcase, FiFileText, FiMail, FiAward 
+  FiHome, FiUser, FiBriefcase, FiFileText, FiMail, FiAward, FiSun
 } from 'react-icons/fi';
 import { playHoverSound, playClickSound } from '../utils/sounds';
+import { useTheme } from '../contexts/ThemeContext';
 
 const navItems = [
   { to: "/", icon: <FiHome size={24} />, label: "Home" },
@@ -16,6 +17,8 @@ const navItems = [
 ];
 
 function Navbar() {
+  const { toggleTheme } = useTheme();
+
   return (
     <nav className="circular-navbar">
       <ul>
@@ -35,6 +38,18 @@ function Navbar() {
             </NavLink>
           </li>
         ))}
+        <li
+          onMouseEnter={playHoverSound}
+          onClick={() => {
+            playClickSound();
+            toggleTheme();
+          }}
+        >
+          <a href="#" className="nav-link" title="Change Theme">
+            <FiSun size={24} />
+            <span className="tooltip-text">Theme</span>
+          </a>
+        </li>
       </ul>
     </nav>
   );

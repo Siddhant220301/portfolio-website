@@ -1,12 +1,15 @@
 import { useRef, useEffect } from 'react';
 import './Squares.css';
+import { useTheme } from '../contexts/ThemeContext';
+import { themes } from '../themes';
 
 const Squares = () => {
+  const { theme } = useTheme();
   const canvasRef = useRef(null);
   const gridOffset = useRef({ x: 0, y: 0 });
-  const speed = 0.3;
+  const speed = themes[theme].gridSpeed || 0.3;
   const squareSize = 40;
-  const borderColor = '#27374D';
+  const borderColor = themes[theme]['--medium-gray'];
 
   useEffect(() => {
     const canvas = canvasRef.current;

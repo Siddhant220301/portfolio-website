@@ -1,6 +1,7 @@
-import React, { useState } from 'react'; // 'useEffect' has been removed from this line
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 import Bootloader from './components/Bootloader';
 import Layout from './components/Layout';
@@ -40,18 +41,20 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <CustomCursor />
-      <Squares />
+    <ThemeProvider>
+      <BrowserRouter>
+        <CustomCursor />
+        <Squares />
 
-      <AnimatePresence mode="wait">
-        {isLoading ? (
-          <Bootloader key="bootloader" onBootComplete={handleBootComplete} />
-        ) : (
-          <MainContent />
-        )}
-      </AnimatePresence>
-    </BrowserRouter>
+        <AnimatePresence mode="wait">
+          {isLoading ? (
+            <Bootloader key="bootloader" onBootComplete={handleBootComplete} />
+          ) : (
+            <MainContent />
+          )}
+        </AnimatePresence>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

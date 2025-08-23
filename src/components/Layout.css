@@ -49,8 +49,8 @@
   background: 
     repeating-linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0.02) 1px,
+      var(--scanline-color),
+      var(--scanline-color) 1px,
       transparent 1px,
       transparent 3px
     );

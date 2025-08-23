@@ -1,13 +1,20 @@
 import React, { useEffect, useRef } from 'react';
 import './CustomCursor.css';
+import { useTheme } from '../contexts/ThemeContext';
+import { themes } from '../themes';
 
 const CustomCursor = () => {
+  const { theme } = useTheme();
   const cursorDotRef = useRef(null);
   const cursorFollowerRef = useRef(null);
 
   const mousePos = useRef({ x: 0, y: 0 });
   const followerPos = useRef({ x: 0, y: 0 });
   const speed = 0.99;
+
+  useEffect(() => {
+    document.body.style.cursor = themes[theme].cursor;
+  }, [theme]);
 
   useEffect(() => {
     const onMouseMove = (e) => {
