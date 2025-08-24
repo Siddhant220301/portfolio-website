@@ -17,7 +17,8 @@ const pageVariants = {
 function Layout() {
   const location = useLocation();
   const navigate = useNavigate();
-  const showProfileCard = ['/', '/about'].includes(location.pathname);
+  // UPDATE THIS LINE TO INCLUDE THE EDUCATION PAGE
+  const showProfileCard = ['/', '/education', '/about'].includes(location.pathname);
 
   return (
     <>
@@ -25,7 +26,6 @@ function Layout() {
         <Squares />
       </div>
       <div className="scanlines-overlay" />
-      {/* The <div className="scanner-line" /> has been removed from here */}
       <CustomCursor />
 
       <div className="layout-container">

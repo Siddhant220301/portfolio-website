@@ -2,12 +2,15 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { 
-  FiHome, FiUser, FiBriefcase, FiFileText, FiMail, FiAward 
+  FiHome, FiUser, FiBriefcase, FiFileText, FiMail, FiAward, 
+  FiBookOpen // <-- 1. IMPORT A NEW ICON
 } from 'react-icons/fi';
 import { playHoverSound, playClickSound } from '../utils/sounds';
 
 const navItems = [
   { to: "/", icon: <FiHome size={24} />, label: "Home" },
+  // 2. ADD THE NEW NAVIGATION ITEM HERE
+  { to: "/education", icon: <FiBookOpen size={24} />, label: "Education" },
   { to: "/about", icon: <FiUser size={24} />, label: "About" },
   { to: "/experience", icon: <FiBriefcase size={24} />, label: "Experience" },
   { to: "/projects", icon: <FiFileText size={24} />, label: "Projects" },
